@@ -1,0 +1,182 @@
+<html>
+<head>
+<title>Sapiens</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart','corechart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyB47y8Jj-DtsDyC4jaJNGq-6T-DTiQPt68'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+      function drawRegionsMap() {
+        var total_counts = JSON.parse('{{ country_data | tojson | safe}}');
+
+        var dataTable = new google.visualization.DataTable();
+        dataTable.addColumn('string', "Country");
+        var key;
+        dataTable.addColumn('number', "Tweets");
+        var i;
+        for (i = 0; i < total_counts.Countries.length; i++) {
+            if(total_counts.Countries[i].total_count != 0){
+            dataTable.addRows([[total_counts.Countries[i].country,
+            parseInt(total_counts.Countries[i].total_count)
+            ]]);
+            }
+        }
+        var options = {
+            title: 'Geographic distribution of Tweets',
+            height:450,
+            width:450,
+            colorAxis: {colors: ['#da9ef7', '#54067d']}
+      };
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(dataTable, options);
+
+        var poi_counts = JSON.parse('{{ poicount | tojson | safe}}');
+
+        var dataTable2 = new google.visualization.DataTable();
+        dataTable2.addColumn('string', "Category");
+        var key;
+        dataTable2.addColumn('number', "nTweets");
+        console.log(poi_counts.poi);
+        var i;
+            dataTable2.addRows([['Verified Account Tweets',
+            parseInt(poi_counts.poi)
+            ]]);
+            dataTable2.addRows([['Non Verified Account Tweets',
+            parseInt(poi_counts.non_poi)
+            ]]);
+
+        var options2 = {
+          title: 'Verified vs Non Verified Account Tweets',
+          height:500,
+          width:500,
+          slices: {
+            0: { color: '#da9ef7' },
+            1: { color: '#ae38eb' }
+          }
+        };
+
+        var chart2 = new google.visualization.PieChart(document.getElementById('curve_chart2'));
+        chart2.draw(dataTable2, options2);
+      }
+    </script>
+</head>
+<link rel="stylesheet" href="/static/style.css">
+
+<body>
+<div class ="p1" style="background-color:#E9CAF9;">
+<div class="topnav">
+    <a class="active" href="/"><b>Home</b></a>
+    <a href="/Analytics"><b>Analytics</b></a>
+</div>
+    <h1 class="p1" style="color:black">
+        Sapiens
+    </h1>
+<form class="search" method="POST" action="/">
+    <label style="font-size: 20px"><b>Search:</b></label>
+	<input type="text" name="item" value="" style="font-size: 18px" />
+    <label style="font-size: 20px"><b>POI Name:</b></label>
+    <select name="poi" id="poi" style="font-size: 18px">
+         <option value="">Select</option>
+  <option value="narendramodi">Narendra Modi</option>
+  <option value="SrBachchan">Amitab Bachchan</option>
+  <option value="DrRPNishank">Dr. Ramesh Pokhriyal Nishank</option>
+  <option value="BernieSanders">Bernie Sanders</option>
+        <option value="JoeBiden">Joe Biden</option>
+        <option value="NYGovCuomo">Andrew Cuomo</option>
+        <option value="matteorenzi">Matteo Renzi</option>
+        <option value="AmitShah">Amit Shah</option>
+        <option value="CDCgov">CDC</option>
+        <option value="KamalaHarris">Kamala Harris</option>
+        <option value="PiyushGoyal">Piyush Goyal</option>
+        <option value="GiorgiaMeloni">Giorgia Meloni</option>
+        <option value="matteosalvinimi">Matteo Salvinimi</option>
+        <option value="ewarren">Elizabeth Warren</option>
+        <option value="realDonaldTrump">Donald J. Trump</option>
+        <option value="ArvindKejriwal">Arvind Kejriwal</option>
+        <option value="RahulGandhi">Rahul Gandhi</option>
+</select>
+    <label style="font-size: 20px"><b>Country:</b></label>
+	<select name="country" id="country" style="font-size: 18px">
+        <option value="">Select</option>
+  <option value="India">India</option>
+  <option value="USA">USA</option>
+  <option value="Italy">Italy</option>
+    </select>
+    <label style="font-size: 20px"><b>Language:</b></label>
+	<select name="language" id="language" style="font-size: 18px">
+        <option value="">Select</option>
+  <option value="hi">Hindi</option>
+  <option value="en">English</option>
+  <option value="it">Italian</option>
+    </select>
+	<input style="font-size: 18px" type="submit" value="Submit" name="action">
+</form>
+</div>
+<div class="p1" style="font-size: 18px">
+    <p><b>Your are viewing search results for:</b>
+        {% if word|length %}
+                {{word}}
+        {% endif %}
+        {% if poiname|length %}
+                {{poiname}}
+        {% endif %}
+        {% if countr|length %}
+                {{countr}}
+        {% endif %}
+        {% if langu|length %}
+                {{langu}}
+        {% endif %}
+    </p>
+    <p>Retrieved Tweets: {{nt}}</p>
+</div>
+</body>
+<body>
+<div id="col-1">
+<div class=p1 style="background-color:#FFFFFF;">
+  <h3>Twitter Search Results</h3>
+    {% for i in range(n)%}
+	<div class="w3-round-xxlarge">
+    <p><b>@{{list1[i]["user.screen_name"][0]}}</b></p>
+    <p>{{list1[i]["full_text"][0]}}</p>
+    <p><b>Sentiment Analysis Score:</b> {{list1[i]["polarity"]}}</p>
+        <p><b>Verified:</b>  {{list1[i]["user.verified"][0]}}</p>
+	</div>
+	{% endfor %}
+</div>
+</div>
+<div id="col-2" style="background-color:#FFFFFF;">
+<div class=p1>
+  <h3>News Search Results</h3>
+    {% for i in mylist %}
+	<div class="w3-round-xxlarge">
+    <p><b>{{i['title']}}</b></p>
+    <p> {% if i['desc'] is not none %}
+      {{i['desc']}}
+      {% endif %}
+      </p>
+    <p>{{i['url'] | urlize}}</p>
+        <!-- <input type="submit"  action={{i['url'] | urlize}}>More</input> -->
+        <!-- <a href="{{i['url'] | urlize}}" class="button">More</a> -->
+        <!-- <button type="button" onclick="window.location.href='{{i['url'] | urlize}}'; " >Display Table Y</button> -->
+	</div>
+    {% endfor %}
+  </div>
+</div>
+<div id="col-3" style="background-color:#FFFFFF;">
+	<div class=p1>
+  <h3>Query Related Analytics</h3>
+        <p style="text-align:center; font-size:17px"><b>Geographical Distribution of Tweets</b></p>
+    <div id="regions_div" >
+    </div>
+    <div id="curve_chart2"></div>
+  </div>
+</div>
+
+</body>
+
+</html>

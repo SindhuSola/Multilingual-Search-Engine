@@ -1,0 +1,68 @@
+{"AmitShah":[{"Date":"2020-09-18","Covid":1,"nCovid":2,"norm_Covid":0.3333333333,"norm_nCovid":0.25},{"Date":"2020-09-17","Covid":3,"nCovid":8,"norm_Covid":1.0,"norm_nCovid":1.0},{"Date":"2020-09-16","Covid":0,"nCovid":0,"norm_Covid":0.0,"norm_nCovid":0.0},{"Date":"2020-09-15","Covid":0,"nCovid":3,"norm_Covid":0.0,"norm_nCovid":0.375},{"Date":"2020-09-14","Covid":1,"nCovid":0,"norm_Covid":0.3333333333,"norm_nCovid":0.0},{"Date":"2020-09-13","Covid":0,"nCovid":1,"norm_Covid":0.0,"norm_nCovid":0.125},{"Date":"2020-09-12","Covid":0,"nCovid":2,"norm_Covid":0.0,"norm_nCovid":0.25},{"Date":"2020-09-11","Covid":0,"nCovid":6,"norm_Covid":0.0,"norm_nCovid":0.75}],
+"Modi":[{"Date":"2020-09-18","Covid":4,"nCovid":5,"norm_Covid":0.4,"norm_nCovid":0.0251256281},{"Date":"2020-09-17","Covid":10,"nCovid":199,"norm_Covid":1.0,"norm_nCovid":1.0},{"Date":"2020-09-16","Covid":2,"nCovid":3,"norm_Covid":0.2,"norm_nCovid":0.0150753769},{"Date":"2020-09-15","Covid":7,"nCovid":4,"norm_Covid":0.7,"norm_nCovid":0.0201005025},{"Date":"2020-09-14","Covid":4,"nCovid":2,"norm_Covid":0.4,"norm_nCovid":0.0100502513},{"Date":"2020-09-13","Covid":2,"nCovid":4,"norm_Covid":0.2,"norm_nCovid":0.0201005025},{"Date":"2020-09-12","Covid":3,"nCovid":7,"norm_Covid":0.3,"norm_nCovid":0.0351758794},{"Date":"2020-09-11","Covid":0,"nCovid":9,"norm_Covid":0.0,"norm_nCovid":0.0452261307}],
+"RPNishank":[{"Date":"2020-09-18","Covid":2,"nCovid":18,"norm_Covid":0.1666666667,"norm_nCovid":0.72},{"Date":"2020-09-17","Covid":12,"nCovid":16,"norm_Covid":1.0,"norm_nCovid":0.64},{"Date":"2020-09-16","Covid":4,"nCovid":12,"norm_Covid":0.3333333333,"norm_nCovid":0.48},{"Date":"2020-09-15","Covid":2,"nCovid":17,"norm_Covid":0.1666666667,"norm_nCovid":0.68},{"Date":"2020-09-14","Covid":2,"nCovid":13,"norm_Covid":0.1666666667,"norm_nCovid":0.52},{"Date":"2020-09-13","Covid":1,"nCovid":14,"norm_Covid":0.0833333333,"norm_nCovid":0.56},{"Date":"2020-09-12","Covid":3,"nCovid":13,"norm_Covid":0.25,"norm_nCovid":0.52},{"Date":"2020-09-11","Covid":9,"nCovid":25,"norm_Covid":0.75,"norm_nCovid":1.0}],
+"India":[{
+      "location": "India",
+      "date": "2020-09-18",
+      "total_cases": 5308014,
+      "new_cases": 93337,
+      "nNew_Cases": 0.956615763,
+      "nTotal_Cases": 1
+    },
+    {
+      "location": "India",
+      "date": "2020-09-17",
+      "total_cases": 5214677,
+      "new_cases": 96424,
+      "nNew_Cases": 0.9882545865,
+      "nTotal_Cases": 0.9824158339
+    },
+    {
+      "location": "India",
+      "date": "2020-09-16",
+      "total_cases": 5118253,
+      "new_cases": 97894,
+      "nNew_Cases": 1.003320693,
+      "nTotal_Cases": 0.9642500943
+    },
+    {
+      "location": "India",
+      "date": "2020-09-15",
+      "total_cases": 5020359,
+      "new_cases": 90123,
+      "nNew_Cases": 0.92367531,
+      "nTotal_Cases": 0.945807415
+    },
+    {
+      "location": "India",
+      "date": "2020-09-14",
+      "total_cases": 4930236,
+      "new_cases": 83809,
+      "nNew_Cases": 0.8589627959,
+      "nTotal_Cases": 0.9288287484
+    },
+    {
+      "location": "India",
+      "date": "2020-09-13",
+      "total_cases": 4846427,
+      "new_cases": 92071,
+      "nNew_Cases": 0.9436404633,
+      "nTotal_Cases": 0.9130396039
+    },
+    {
+      "location": "India",
+      "date": "2020-09-12",
+      "total_cases": 4754356,
+      "new_cases": 94372,
+      "nNew_Cases": 0.9672235318,
+      "nTotal_Cases": 0.895693945
+    },
+    {
+      "location": "India",
+      "date": "2020-09-11",
+      "total_cases": 4659984,
+      "new_cases": 97570,
+      "nNew_Cases": 1,
+      "nTotal_Cases": 0.8779147907
+    }
+  ]}

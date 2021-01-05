@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../static/charts_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+          //var objs= '{{data_india}}';
+          var data_india = JSON.parse('{{ india | tojson | safe}}');
+          var data_italy = JSON.parse('{{ italy | tojson | safe}}');
+          var data_usa = JSON.parse('{{ usa | tojson | safe}}');
+          var total_counts = JSON.parse('{{ total | tojson | safe}}');
+          var total_poi_counts =JSON.parse('{{ total_poi_counts | tojson | safe}}');
+          var total_lang_counts =JSON.parse('{{ total_lang_counts | tojson | safe}}');
+
+        var dataTable = new google.visualization.DataTable();
+        dataTable.addColumn('string', "Date");
+        var key;
+        dataTable.addColumn('number', "AmitShah");
+        //dataTable.addColumn('number', "Arvind Kejriwal");
+        dataTable.addColumn('number', "Modi");
+        dataTable.addColumn('number', "Rahul Gandhi");
+        //dataTable.addColumn('number', "RPNishank");
+        dataTable.addColumn('number', "India Covid Cases");
+        var i;
+        for (i = 0; i < data_india.AmitShah.length; i++) {
+            dataTable.addRows([["Sep"+data_india.AmitShah[i].Date.substring(8,data_india.AmitShah[i].Date.length),
+            data_india.AmitShah[i].norm_Covid,
+            data_india.Modi[i].norm_Covid,
+            data_india.RPNishank[i].norm_Covid,
+            data_india.India[i].nNew_Cases
+            ]]);
+            }
+        var options = {
+          title: 'India',
+          width:500,
+          height:500,
+          curveType: 'function',
+          legend: { position: 'bottom' },
+          series: {
+            0: { color: '#da9ef7' },
+            1: { color: '#ae38eb' },
+            2: { color: '#701e9c'},
+            3: { color: "#000000"}}
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        chart.draw(dataTable, options);
+
+
+        var dataTable1 = new google.visualization.DataTable();
+        dataTable1.addColumn('string', "Date");
+        var key;
+        dataTable1.addColumn('number', "GiorgiaMeloni");
+        //dataTable.addColumn('number', "Arvind Kejriwal");
+        dataTable1.addColumn('number', "Matteorenzi");
+        dataTable1.addColumn('number', "Matteosalvinimi");
+        dataTable1.addColumn('number', "Italy Covid Case");
+        var i;
+        for (i = 0; i < data_italy.GiorgiaMeloni.length; i++) {
+            dataTable1.addRows([["Sep"+data_italy.GiorgiaMeloni[i].Date.substring(8,data_italy.GiorgiaMeloni[i].Date.length),
+            data_italy.GiorgiaMeloni[i].norm_Covid,
+            data_italy.matteorenzi[i].norm_Covid,
+            data_italy.matteosalvinimi[i].norm_Covid,
+            data_italy.Italy[i].nNew_Cases
+            ]]);
+            }
+        var options1 = {
+          title: 'Italy',
+          width:500,
+          height:500,
+          curveType: 'function',
+          legend: { position: 'bottom' },
+          series: {
+            0: { color: '#da9ef7' },
+            1: { color: '#ae38eb' },
+            2: { color: '#701e9c'},
+            3: { color: "#000000"}}
+        };
+
+        var chart1 = new google.visualization.LineChart(document.getElementById('curve_chart1'));
+        //options['vAxis']['format'] = ;
+        chart1.draw(dataTable1, options1);
+
+
+
+        var dataTable2 = new google.visualization.DataTable();
+        dataTable2.addColumn('string', "Date");
+        var key;
+        dataTable2.addColumn('number', "Trump");
+        dataTable2.addColumn('number', "CDC");
+        dataTable2.addColumn('number', "Cuomo");
+        //dataTable2.addColumn('number', "KamalaHarris");
+        dataTable2.addColumn('number', "USA Covid Cases");
+        var i;
+        for (i = 0; i < data_usa.Trump.length; i++) {
+            dataTable2.addRows([["Sep"+data_usa.Trump[i].Date.substring(8,data_usa.Trump[i].Date.length),
+            data_usa.Trump[i].norm_Covid,
+            data_usa.CDC[i].norm_Covid,
+            data_usa.Cuomo[i].norm_Covid,
+            //data_usa.KamalaHarris[i].norm_Covid,
+            data_usa.USA[i].nNew_Cases
+            ]]);
+            }
+        var options2 = {
+          title: 'USA',
+          width:500,
+          height:500,
+          curveType: 'function',
+          legend: { position: 'bottom' },
+          seriesType: 'bars',
+          series: {
+            0: { color: '#da9ef7' },
+            1: { color: '#ae38eb' },
+            2: { color: '#54067d'},
+            3: {type: 'line', color: "#000000"}}
+        };
+        var chart2 = new google.visualization.ComboChart(document.getElementById('curve_chart2'));
+        chart2.draw(dataTable2, options2);
+
+
+        var dataTable3 = new google.visualization.DataTable();
+        dataTable3.addColumn('string', "Country");
+        var key;
+        dataTable3.addColumn('number', "Tweets");
+        //dataTable3.addColumn('number', "CDC");
+        //dataTable3.addColumn('number', "Cuomo");
+        //dataTable2.addColumn('number', "KamalaHarris");
+        //dataTable2.addColumn('number', "USA Covid Cases");
+        var i;
+        for (i = 0; i < total_counts.length; i++) {
+          dataTable3.addRows([[total_counts[i].Country,
+            total_counts[i].Total_Count,
+            ]]);
+            }
+        var options3 = {
+          title:"By Country",
+          width:500,
+          height:500,
+          seriesType: 'bars',
+          legend: { position: 'bottom' },
+          slices: {
+            0: { color: '#da9ef7' },
+            1: { color: '#ae38eb' },
+            2: { color: '#54067d'}
+          }
+        };
+        var chart3 = new google.visualization.PieChart(document.getElementById('curve_chart3'));
+        chart3.draw(dataTable3, options3);
+
+
+        var dataTable4 = new google.visualization.DataTable();
+        dataTable4.addColumn('string', "Date");
+        var key;
+
+        dataTable4.addColumn('number', "Covid Tweets");
+        dataTable4.addColumn('number', "Non Covid Tweets");
+        dataTable4.addColumn('number', "New Covid Cases");
+        var i;
+        for (i = 0; i < data_usa.KamalaHarris.length; i++) {
+          dataTable4.addRows([["Sep"+data_usa.KamalaHarris[i].Date.substring(8,data_usa.KamalaHarris[i].Date.length),
+            data_usa.KamalaHarris[i].norm_Covid,
+            data_usa.KamalaHarris[i].norm_nCovid,
+            data_usa.USA[i].nNew_Cases
+            ]]);
+            }
+        var options4 = {
+          title: 'KamalaHarris Covid vs non Covid Tweets',
+          width:500,
+          height:500,
+          curveType: 'function',
+          legend: { position: 'bottom' },
+          seriesType: 'bars',
+          series: {
+            0: { color: '#da9ef7' },
+            1: { color: '#ae38eb' },
+            2: { color: '#000000',type: 'line'}}
+        };
+        var chart4 = new google.visualization.ComboChart(document.getElementById('curve_chart4'));
+        chart4.draw(dataTable4, options4);
+
+
+
+        var dataTable5 = new google.visualization.DataTable();
+        dataTable5.addColumn('string', "Date");
+        var key;
+
+        dataTable5.addColumn('number', "Covid Tweets");
+        dataTable5.addColumn('number', "Non Covid Tweets");
+        dataTable5.addColumn('number', "New Covid Cases");
+        var i;
+        for (i = 0; i < data_india.Modi.length; i++) {
+          dataTable5.addRows([["Sep"+data_india.Modi[i].Date.substring(8,data_india.Modi[i].Date.length),
+          data_india.Modi[i].norm_Covid,
+          data_india.Modi[i].norm_nCovid,
+          data_india.India[i].nNew_Cases
+            ]]);
+            }
+        var options5 = {
+          title: 'Narendra Modi Covid vs non Covid Tweets',
+          width:500,
+          height:500,
+          curveType: 'function',
+          legend: { position: 'bottom' },
+          seriesType: 'bars',
+          series: {
+            0: { color: '#da9ef7' },
+            1: { color: '#ae38eb' },
+            2: { color: '#000000',type: 'line'}}
+        };
+        var chart5 = new google.visualization.ComboChart(document.getElementById('curve_chart5'));
+        chart5.draw(dataTable5, options5);
+
+
+
+        var dataTable6 = new google.visualization.DataTable();
+        dataTable6.addColumn('string', "Date");
+        var key;
+
+        dataTable6.addColumn('number', "Covid Tweets");
+        dataTable6.addColumn('number', "Non Covid Tweets");
+        dataTable6.addColumn('number', "New Covid Cases");
+        var i;
+        for (i = 0; i < data_italy.GiorgiaMeloni.length; i++) {
+          dataTable6.addRows([["Sep"+data_italy.GiorgiaMeloni[i].Date.substring(8,data_italy.GiorgiaMeloni[i].Date.length),
+          data_italy.GiorgiaMeloni[i].norm_Covid,
+          data_italy.GiorgiaMeloni[i].norm_nCovid,
+          data_italy.Italy[i].nNew_Cases
+            ]]);
+            }
+        var options6 = {
+          title: 'GiorgiaMeloni Covid vs non Covid Tweets',
+          width:500,
+          height:500,
+          curveType: 'function',
+          legend: { position: 'bottom' },
+          seriesType: 'bars',
+          series: {
+            0: { color: '#da9ef7' },
+            1: { color: '#ae38eb' },
+            2: { color: '#000000',type: 'line'}}
+        };
+        var chart6 = new google.visualization.ComboChart(document.getElementById('curve_chart6'));
+        chart6.draw(dataTable6, options6);
+
+
+        var dataTable7 = new google.visualization.DataTable();
+        dataTable7.addColumn('string', "POI Name");
+        var key;
+        dataTable7.addColumn('number', "Total Tweets");
+        var i;
+        for (i = 0; i < total_poi_counts.length; i++) {
+          dataTable7.addRows([[total_poi_counts[i].A,
+          total_poi_counts[i].B
+            ]]);
+            }
+        var options7 = {
+          width:1000,
+          height:700,
+          curveType: 'function',
+          legend: { position: 'bottom' },
+          seriesType: 'bars',
+          series: {
+            0: { color: '#da9ef7' }}
+        };
+        var chart7 = new google.visualization.ComboChart(document.getElementById('curve_chart7'));
+        chart7.draw(dataTable7, options7);
+
+
+        var dataTable8 = new google.visualization.DataTable();
+        dataTable8.addColumn('string', "Language");
+        var key;
+        dataTable8.addColumn('number', "Total Tweets");
+        var i;
+        for (i = 0; i < total_lang_counts.length; i++) {
+          dataTable8.addRows([[total_lang_counts[i].language,
+          total_lang_counts[i].count
+            ]]);
+            }
+        var options8 = {
+          title: 'By language',
+          width:500,
+          height:500,
+          curveType: 'function',
+          legend: { position: 'bottom' },
+          slices: {
+            0: { color: '#da9ef7' },
+            1: { color: '#ae38eb' },
+            2: { color: '#54067d'}
+          },
+            pieHole: 0.4
+        };
+        var chart8 = new google.visualization.PieChart(document.getElementById('curve_chart8'));
+        chart8.draw(dataTable8, options8);
+      }
+    </script>
+  </head>
+  <body>
+  <div class="topnav">
+  <a href="/">Home</a>
+  <a class="active"href="/Analytics">Analytics</a>
+</div>
+    <p style="text-align:center;font-size: 25px; background-color:#E9CAF9;">Covid Cases vs POI Tweets</p>
+    <div class='some-page-wrapper'>
+      <div class='row'>
+        <div class='column'>
+          <div class='column1' id="curve_chart" >
+          </div>
+        </div>
+        <div class='column'>
+          <div class='column2' id="curve_chart1" >
+          </div>
+        </div>
+        <div class='column'>
+          <div class='column3' id="curve_chart2">
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center;font-size: 25px; background-color:#E9CAF9;">Total Tweet Analysis</p>
+    <div class='row 2'>
+      <div class='column'>
+        <div class='column1' id="curve_chart3"></div>
+      </div>
+      <div class='column'>
+        <div class='column2' id="curve_chart8"></div>
+      </div>
+    </div>
+      <p style="text-align:center;font-size: 25px; background-color:#E9CAF9;">Word Cloud</p>
+    <div class='row 3'>
+      <div class='column'>
+        <div class='column1' id="word_cloud_1">
+          <p style="text-align:center"><b>India</b></p>
+          <img src="../static/india3.png" width="350" height="350">
+        </div>
+      </div>
+      <div class='column'>
+        <div class='column2' id="word_cloud_2">
+          <p style="text-align:center"><b>Italy</b></p>
+          <img src="../static/italy3.png" width="350" height="350">
+        </div>
+      </div>
+      <div class='column'>
+        <div class='column3' id="word_cloud_3">
+            <p style="text-align:center"><b>USA</b></p>
+          <img src="../static/usa_combined.png" width="350" height="350">
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size: 25px; background-color:#E9CAF9;">Correlation between Covid/Non-Covid and New Covid Cases </p>
+    <div class='row 4'>
+      <div class='column'>
+        <div class='column1' id="curve_chart4"></div>
+      </div>
+        <div class='column'>
+          <div class='column2' id="curve_chart5"></div>
+        </div>
+        <div class='column'>
+          <div class='column3' id="curve_chart6"></div>
+        </div>
+    </div>
+            <p style="text-align:center;font-size: 25px; background-color:#E9CAF9;">Total POI Tweets</p>
+    <div class='row 5'>
+      <div class='column'>
+        <div class='column1' style="display:block; margin:0 auto;" id="curve_chart7"></div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+{"GiorgiaMeloni":[{"Date":"2020-09-18","Covid":1,"nCovid":3,"norm_Covid":0.5,"norm_nCovid":0.75},{"Date":"2020-09-17","Covid":1,"nCovid":1,"norm_Covid":0.5,"norm_nCovid":0.25},{"Date":"2020-09-16","Covid":1,"nCovid":4,"norm_Covid":0.5,"norm_nCovid":1.0},{"Date":"2020-09-15","Covid":0,"nCovid":2,"norm_Covid":0.0,"norm_nCovid":0.5},{"Date":"2020-09-14","Covid":0,"nCovid":3,"norm_Covid":0.0,"norm_nCovid":0.75},{"Date":"2020-09-13","Covid":1,"nCovid":1,"norm_Covid":0.5,"norm_nCovid":0.25},{"Date":"2020-09-12","Covid":2,"nCovid":3,"norm_Covid":1.0,"norm_nCovid":0.75},{"Date":"2020-09-11","Covid":1,"nCovid":4,"norm_Covid":0.5,"norm_nCovid":1.0}],
+"matteorenzi":[{"Date":"2020-09-18","Covid":2,"nCovid":0,"norm_Covid":1.0,"norm_nCovid":0.0},{"Date":"2020-09-17","Covid":1,"nCovid":7,"norm_Covid":0.5,"norm_nCovid":1.0},{"Date":"2020-09-16","Covid":2,"nCovid":1,"norm_Covid":1.0,"norm_nCovid":0.1428571429},{"Date":"2020-09-15","Covid":1,"nCovid":1,"norm_Covid":0.5,"norm_nCovid":0.1428571429},{"Date":"2020-09-14","Covid":0,"nCovid":3,"norm_Covid":0.0,"norm_nCovid":0.4285714286},{"Date":"2020-09-13","Covid":0,"nCovid":3,"norm_Covid":0.0,"norm_nCovid":0.4285714286},{"Date":"2020-09-12","Covid":1,"nCovid":2,"norm_Covid":0.5,"norm_nCovid":0.2857142857},{"Date":"2020-09-11","Covid":0,"nCovid":4,"norm_Covid":0.0,"norm_nCovid":0.5714285714}],
+"matteosalvinimi":[{"Date":"2020-09-18","Covid":1,"nCovid":15,"norm_Covid":0.1428571429,"norm_nCovid":0.375},{"Date":"2020-09-17","Covid":5,"nCovid":36,"norm_Covid":0.7142857143,"norm_nCovid":0.9},{"Date":"2020-09-16","Covid":7,"nCovid":37,"norm_Covid":1.0,"norm_nCovid":0.925},{"Date":"2020-09-15","Covid":5,"nCovid":37,"norm_Covid":0.7142857143,"norm_nCovid":0.925},{"Date":"2020-09-14","Covid":7,"nCovid":40,"norm_Covid":1.0,"norm_nCovid":1.0},{"Date":"2020-09-13","Covid":5,"nCovid":28,"norm_Covid":0.7142857143,"norm_nCovid":0.7},{"Date":"2020-09-12","Covid":3,"nCovid":26,"norm_Covid":0.4285714286,"norm_nCovid":0.65},{"Date":"2020-09-11","Covid":2,"nCovid":22,"norm_Covid":0.2857142857,"norm_nCovid":0.55}],
+"Italy":[
+  {
+    "location": "Italy",
+    "date": "9/18/2020",
+    "total_cases": 294932,
+    "new_cases": 1907,
+    "nNew_Cases": 1,
+    "nTotal_Cases": 1
+  },
+  {
+    "location": "Italy",
+    "date": "9/17/2020",
+    "total_cases": 293025,
+    "new_cases": 1583,
+    "nNew_Cases": 0.830099633,
+    "nTotal_Cases": 0.993534103
+  },
+  {
+    "location": "Italy",
+    "date": "9/16/2020",
+    "total_cases": 291442,
+    "new_cases": 1452,
+    "nNew_Cases": 0.761405349,
+    "nTotal_Cases": 0.988166764
+  },
+  {
+    "location": "Italy",
+    "date": "9/15/2020",
+    "total_cases": 289990,
+    "new_cases": 1229,
+    "nNew_Cases": 0.64446775,
+    "nTotal_Cases": 0.983243595
+  },
+  {
+    "location": "Italy",
+    "date": "9/14/2020",
+    "total_cases": 288761,
+    "new_cases": 1008,
+    "nNew_Cases": 0.52857892,
+    "nTotal_Cases": 0.979076533
+  },
+  {
+    "location": "Italy",
+    "date": "9/13/2020",
+    "total_cases": 287753,
+    "new_cases": 1456,
+    "nNew_Cases": 0.763502884,
+    "nTotal_Cases": 0.975658796
+  },
+  {
+    "location": "Italy",
+    "date": "9/12/2020",
+    "total_cases": 286297,
+    "new_cases": 1501,
+    "nNew_Cases": 0.787100157,
+    "nTotal_Cases": 0.970722065
+  },
+  {
+    "location": "Italy",
+    "date": "9/11/2020",
+    "total_cases": 284796,
+    "new_cases": 1616,
+    "nNew_Cases": 0.8474043,
+    "nTotal_Cases": 0.965632756
+  }
+]}

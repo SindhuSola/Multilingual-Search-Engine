@@ -1,0 +1,73 @@
+{"ElizabethWarren":[{"Date":"2020-09-18","Covid":2,"nCovid":3,"norm_Covid":0.5,"norm_nCovid":0.75},{"Date":"2020-09-17","Covid":4,"nCovid":0,"norm_Covid":1.0,"norm_nCovid":0.0},{"Date":"2020-09-16","Covid":1,"nCovid":4,"norm_Covid":0.25,"norm_nCovid":1.0},{"Date":"2020-09-15","Covid":0,"nCovid":3,"norm_Covid":0.0,"norm_nCovid":0.75},{"Date":"2020-09-14","Covid":1,"nCovid":3,"norm_Covid":0.25,"norm_nCovid":0.75},{"Date":"2020-09-13","Covid":1,"nCovid":2,"norm_Covid":0.25,"norm_nCovid":0.5},{"Date":"2020-09-12","Covid":1,"nCovid":1,"norm_Covid":0.25,"norm_nCovid":0.25},{"Date":"2020-09-11","Covid":2,"nCovid":1,"norm_Covid":0.5,"norm_nCovid":0.25}],
+"Trump":[{"Date":"2020-09-18","Covid":10,"nCovid":24,"norm_Covid":1.0,"norm_nCovid":0.75},{"Date":"2020-09-17","Covid":3,"nCovid":19,"norm_Covid":0.3,"norm_nCovid":0.59375},{"Date":"2020-09-16","Covid":2,"nCovid":13,"norm_Covid":0.2,"norm_nCovid":0.40625},{"Date":"2020-09-15","Covid":3,"nCovid":13,"norm_Covid":0.3,"norm_nCovid":0.40625},{"Date":"2020-09-14","Covid":5,"nCovid":32,"norm_Covid":0.5,"norm_nCovid":1.0},{"Date":"2020-09-13","Covid":8,"nCovid":18,"norm_Covid":0.8,"norm_nCovid":0.5625},{"Date":"2020-09-12","Covid":7,"nCovid":18,"norm_Covid":0.7,"norm_nCovid":0.5625},{"Date":"2020-09-11","Covid":3,"nCovid":17,"norm_Covid":0.3,"norm_nCovid":0.53125}],
+"CDC":[{"Date":"2020-09-18","Covid":3,"nCovid":3,"norm_Covid":0.3333333333,"norm_nCovid":0.3333333333},{"Date":"2020-09-17","Covid":8,"nCovid":8,"norm_Covid":0.8888888889,"norm_nCovid":0.8888888889},{"Date":"2020-09-16","Covid":8,"nCovid":8,"norm_Covid":0.8888888889,"norm_nCovid":0.8888888889},{"Date":"2020-09-15","Covid":8,"nCovid":8,"norm_Covid":0.8888888889,"norm_nCovid":0.8888888889},{"Date":"2020-09-14","Covid":9,"nCovid":9,"norm_Covid":1.0,"norm_nCovid":1.0},{"Date":"2020-09-13","Covid":2,"nCovid":2,"norm_Covid":0.2222222222,"norm_nCovid":0.2222222222},{"Date":"2020-09-12","Covid":2,"nCovid":2,"norm_Covid":0.2222222222,"norm_nCovid":0.2222222222},{"Date":"2020-09-11","Covid":8,"nCovid":8,"norm_Covid":0.8888888889,"norm_nCovid":0.8888888889}],
+"Cuomo":[{"Date":"2020-09-18","Covid":5,"nCovid":1,"norm_Covid":1.0,"norm_nCovid":0.3333333333},{"Date":"2020-09-17","Covid":2,"nCovid":1,"norm_Covid":0.4,"norm_nCovid":0.3333333333},{"Date":"2020-09-16","Covid":5,"nCovid":3,"norm_Covid":1.0,"norm_nCovid":1.0},{"Date":"2020-09-15","Covid":2,"nCovid":1,"norm_Covid":0.4,"norm_nCovid":0.3333333333},{"Date":"2020-09-14","Covid":4,"nCovid":1,"norm_Covid":0.8,"norm_nCovid":0.3333333333},{"Date":"2020-09-13","Covid":2,"nCovid":1,"norm_Covid":0.4,"norm_nCovid":0.3333333333},{"Date":"2020-09-12","Covid":2,"nCovid":0,"norm_Covid":0.4,"norm_nCovid":0.0},{"Date":"2020-09-11","Covid":3,"nCovid":2,"norm_Covid":0.6,"norm_nCovid":0.6666666667}],
+"JoeBiden":[{"Date":"2020-09-18","Covid":6,"nCovid":14,"norm_Covid":1.0,"norm_nCovid":1.0},{"Date":"2020-09-17","Covid":5,"nCovid":7,"norm_Covid":0.8333333333,"norm_nCovid":0.5},{"Date":"2020-09-16","Covid":3,"nCovid":8,"norm_Covid":0.5,"norm_nCovid":0.5714285714},{"Date":"2020-09-15","Covid":1,"nCovid":10,"norm_Covid":0.1666666667,"norm_nCovid":0.7142857143},{"Date":"2020-09-14","Covid":0,"nCovid":8,"norm_Covid":0.0,"norm_nCovid":0.5714285714},{"Date":"2020-09-13","Covid":2,"nCovid":5,"norm_Covid":0.3333333333,"norm_nCovid":0.3571428571},{"Date":"2020-09-12","Covid":2,"nCovid":4,"norm_Covid":0.3333333333,"norm_nCovid":0.2857142857},{"Date":"2020-09-11","Covid":4,"nCovid":0,"norm_Covid":0.6666666667,"norm_nCovid":0.0}],
+"KamalaHarris":[{"Date":"2020-09-18","Covid":4,"nCovid":3,"norm_Covid":0.6666666667,"norm_nCovid":0.6},{"Date":"2020-09-17","Covid":6,"nCovid":2,"norm_Covid":1.0,"norm_nCovid":0.4},{"Date":"2020-09-16","Covid":4,"nCovid":5,"norm_Covid":0.6666666667,"norm_nCovid":1.0},{"Date":"2020-09-15","Covid":6,"nCovid":1,"norm_Covid":1.0,"norm_nCovid":0.2},{"Date":"2020-09-14","Covid":6,"nCovid":3,"norm_Covid":1.0,"norm_nCovid":0.6},{"Date":"2020-09-13","Covid":5,"nCovid":3,"norm_Covid":0.8333333333,"norm_nCovid":0.6},{"Date":"2020-09-12","Covid":3,"nCovid":2,"norm_Covid":0.5,"norm_nCovid":0.4},{"Date":"2020-09-11","Covid":2,"nCovid":4,"norm_Covid":0.3333333333,"norm_nCovid":0.8}],
+"USA":[
+  {
+    "location": "United States",
+    "date": "9/18/2020",
+    "total_cases": 6715928,
+    "new_cases": 48750,
+    "nNew_Cases": 1,
+    "nTotal_Cases": 1
+  },
+  {
+    "location": "United States",
+    "date": "9/17/2020",
+    "total_cases": 6667178,
+    "new_cases": 44922,
+    "nNew_Cases": 0.921476923,
+    "nTotal_Cases": 0.992741137
+  },
+  {
+    "location": "United States",
+    "date": "9/16/2020",
+    "total_cases": 6622256,
+    "new_cases": 38460,
+    "nNew_Cases": 0.788923077,
+    "nTotal_Cases": 0.986052263
+  },
+  {
+    "location": "United States",
+    "date": "9/15/2020",
+    "total_cases": 6583796,
+    "new_cases": 39385,
+    "nNew_Cases": 0.807897436,
+    "nTotal_Cases": 0.980325578
+  },
+  {
+    "location": "United States",
+    "date": "9/14/2020",
+    "total_cases": 6544411,
+    "new_cases": 33842,
+    "nNew_Cases": 0.694194872,
+    "nTotal_Cases": 0.974461162
+  },
+  {
+    "location": "United States",
+    "date": "9/13/2020",
+    "total_cases": 6510569,
+    "new_cases": 34305,
+    "nNew_Cases": 0.703692308,
+    "nTotal_Cases": 0.969422096
+  },
+  {
+    "location": "United States",
+    "date": "9/12/2020",
+    "total_cases": 6476264,
+    "new_cases": 41003,
+    "nNew_Cases": 0.841087179,
+    "nTotal_Cases": 0.96431409
+  },
+  {
+    "location": "United States",
+    "date": "9/11/2020",
+    "total_cases": 6435261,
+    "new_cases": 47439,
+    "nNew_Cases": 0.973107692,
+    "nTotal_Cases": 0.958208754
+  }
+]
+}
